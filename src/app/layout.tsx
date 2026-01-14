@@ -3,6 +3,7 @@
 import { ScrollProgressWrapper } from '@/components/ScrollProgressWrapper'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeToggle } from '@/components/theme-toggle'
 // import { Suspense } from 'react'
 
 // const geistSans = Geist({
@@ -28,6 +29,9 @@ export default function RootLayout({ children }: Props) {
 			{/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
 			<body className="antialiased">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+					<div className="fixed right-2 top-2 w-full z-50">
+						<ThemeToggle />
+					</div>
 					<ScrollProgressWrapper>
 						<div className="px-4 py-10 max-w-3xl mx-auto sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 xl:max-w-6xl">{children}</div>
 					</ScrollProgressWrapper>

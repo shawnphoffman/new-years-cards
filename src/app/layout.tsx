@@ -1,6 +1,8 @@
 // import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from 'next/font/google'
+import { ScrollProgressWrapper } from '@/components/ScrollProgressWrapper'
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 // import { Suspense } from 'react'
 
 // const geistSans = Geist({
@@ -22,10 +24,14 @@ type Props = Readonly<{ children: React.ReactNode }>
 
 export default function RootLayout({ children }: Props) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			{/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
 			<body className="antialiased">
-				<div className="px-4 py-10 max-w-3xl mx-auto sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 xl:max-w-6xl">{children}</div>
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+					<ScrollProgressWrapper>
+						<div className="px-4 py-10 max-w-3xl mx-auto sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 xl:max-w-6xl">{children}</div>
+					</ScrollProgressWrapper>
+				</ThemeProvider>
 				{/* <Suspense fallback={<div>Loading...</div>}>{children}</Suspense> */}
 			</body>
 		</html>

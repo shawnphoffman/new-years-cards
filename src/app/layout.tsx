@@ -28,8 +28,8 @@ export default function RootLayout({ children }: Props) {
 		<html lang="en" suppressHydrationWarning>
 			{/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
 			<body className="antialiased">
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-					<div className="fixed right-2 top-2 w-full z-50">
+				<ThemeProvider attribute="class">
+					<div className="fixed right-2 top-2 z-50">
 						<ThemeToggle />
 					</div>
 					<ScrollProgressWrapper>

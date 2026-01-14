@@ -1,16 +1,17 @@
 // import type { Metadata } from "next";
-import { Geist, Geist_Mono } from 'next/font/google'
+// import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+// import { Suspense } from 'react'
 
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
-})
+// const geistSans = Geist({
+// 	variable: '--font-geist-sans',
+// 	subsets: ['latin'],
+// })
 
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin'],
-})
+// const geistMono = Geist_Mono({
+// 	variable: '--font-geist-mono',
+// 	subsets: ['latin'],
+// })
 
 // export const metadata: Metadata = {
 //   title: "2025 In Review",
@@ -22,7 +23,11 @@ type Props = Readonly<{ children: React.ReactNode }>
 export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+			{/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
+			<body className="antialiased">
+				<div className="px-4 py-10 max-w-3xl mx-auto sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 xl:max-w-6xl">{children}</div>
+				{/* <Suspense fallback={<div>Loading...</div>}>{children}</Suspense> */}
+			</body>
 		</html>
 	)
 }

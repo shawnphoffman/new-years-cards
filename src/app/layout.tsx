@@ -4,6 +4,7 @@ import { ScrollProgressWrapper } from '@/components/ScrollProgressWrapper'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ThemeToggle } from '@/components/theme-toggle'
+import ToolbarExpandable from '@/components/toolbar'
 // import { Suspense } from 'react'
 
 // const geistSans = Geist({
@@ -29,6 +30,9 @@ export default function RootLayout({ children }: Props) {
 			{/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
 			<body className="antialiased">
 				<ThemeProvider attribute="class">
+					<div className="flex flex-col items-center justify-center">
+						<ToolbarExpandable />
+					</div>
 					<div className="fixed right-2 top-2 z-50">
 						<ThemeToggle />
 					</div>

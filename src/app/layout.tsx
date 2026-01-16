@@ -3,7 +3,6 @@
 import { ScrollProgressWrapper } from '@/components/ScrollProgressWrapper'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
-import { ThemeToggle } from '@/components/theme-toggle'
 import ToolbarExpandable from '@/components/toolbar'
 // import { Suspense } from 'react'
 
@@ -32,9 +31,6 @@ export default function RootLayout({ children }: Props) {
 				<ThemeProvider attribute="class">
 					<div className="flex flex-col items-center justify-center">
 						<ToolbarExpandable />
-					</div>
-					<div className="fixed right-2 top-2 z-50">
-						<ThemeToggle />
 					</div>
 					<ScrollProgressWrapper>
 						<div className="px-4 py-10 max-w-3xl mx-auto sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 xl:max-w-6xl">{children}</div>

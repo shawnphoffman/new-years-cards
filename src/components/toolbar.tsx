@@ -5,7 +5,10 @@ import useMeasure from 'react-use-measure'
 import { AnimatePresence, motion, MotionConfig, Transition } from 'motion/react'
 import { cn } from '@/lib/utils'
 import useClickOutside from '@/hooks/useClickOutside'
-import { Folder, MessageCircle, User, WalletCards } from 'lucide-react'
+import { Cat, Clock } from 'lucide-react'
+import { ThemeToggle } from './theme-toggle'
+import { Button } from './ui/button'
+import Link from 'next/link'
 
 const transition = {
 	type: 'spring',
@@ -16,77 +19,33 @@ const transition = {
 const ITEMS = [
 	{
 		id: 1,
-		label: 'User',
-		title: <User className="size-5" />,
+		label: 'All Years',
+		title: <Clock className="size-5" />,
 		content: (
-			<div className="flex flex-col space-y-4">
-				<div className="flex flex-col space-y-1 text-zinc-700">
-					<div className="h-8 w-8 rounded-full bg-linear-to-br from-blue-500 to-blue-400" />
-					<span>Ibelick</span>
-				</div>
-				<button
-					className="relative h-8 w-full scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 px-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98]"
-					type="button"
-				>
-					Edit Profile
-				</button>
+			<div className="flex flex-col gap-1 p-1">
+				<Button asChild variant="outline" className="w-full">
+					<Link href="/">2025</Link>
+				</Button>
+				<Button asChild variant="outline" className="w-full">
+					<Link href="https://2024.madison.rocks" target="_blank">
+						2024
+					</Link>
+				</Button>
 			</div>
 		),
 	},
 	{
 		id: 2,
-		label: 'Messages',
-		title: <MessageCircle className="size-5" />,
+		label: 'Cat Cards',
+		title: <Cat className="size-5" />,
 		content: (
-			<div className="flex flex-col space-y-4">
-				<div className="text-zinc-700">You have 3 new messages.</div>
-				<button
-					className="relative h-8 w-full scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 px-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98]"
-					type="button"
-				>
-					View more
-				</button>
-			</div>
-		),
-	},
-	{
-		id: 3,
-		label: 'Documents',
-		title: <Folder className="size-5" />,
-		content: (
-			<div className="flex flex-col space-y-4">
-				<div className="flex flex-col text-zinc-700">
-					<div className="space-y-1">
-						<div>Project_Proposal.pdf</div>
-						<div>Meeting_Notes.docx</div>
-						<div>Financial_Report.xls</div>
-					</div>
-				</div>
-				<button
-					className="relative h-8 w-full scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 px-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98]"
-					type="button"
-				>
-					Manage documents
-				</button>
-			</div>
-		),
-	},
-	{
-		id: 4,
-		label: 'Wallet',
-		title: <WalletCards className="size-5" />,
-		content: (
-			<div className="flex flex-col space-y-4">
-				<div className="flex flex-col text-zinc-700">
-					<span>Current Balance</span>
-					<span>$1,250.32</span>
-				</div>
-				<button
-					className="relative h-8 w-full scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 px-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98]"
-					type="button"
-				>
-					View Transactions
-				</button>
+			<div className="flex flex-col gap-1 p-1">
+				<Button asChild variant="outline" className="w-full">
+					<Link href="/cats/2025">2025</Link>
+				</Button>
+				<Button asChild variant="outline" className="w-full">
+					<Link href="/cats/2024">2024</Link>
+				</Button>
 			</div>
 		),
 	},
@@ -132,6 +91,7 @@ export default function ToolbarExpandable() {
 								{item.title}
 							</button>
 						))}
+						<ThemeToggle />
 					</div>
 					{/*  */}
 
@@ -153,7 +113,7 @@ export default function ToolbarExpandable() {
 
 											return (
 												<motion.div key={item.id} initial={{ opacity: 0 }} animate={{ opacity: isSelected ? 1 : 0 }} exit={{ opacity: 0 }}>
-													<div className={cn('px-2 pt-2 text-sm', isSelected ? 'block' : 'hidden')}>{item.content}</div>
+													<div className={cn('px-0 pt-0 text-sm', isSelected ? 'block' : 'hidden')}>{item.content}</div>
 												</motion.div>
 											)
 										})}

@@ -21,33 +21,19 @@ const ITEMS = [
 		id: 1,
 		label: 'All Years',
 		title: <Clock className="size-5" />,
-		content: (
-			<div className="flex flex-col gap-1 p-1">
-				<Button asChild variant="outline" className="w-full">
-					<Link href="/">2025</Link>
-				</Button>
-				<Button asChild variant="outline" className="w-full">
-					<Link href="https://2024.madison.rocks" target="_blank">
-						2024
-					</Link>
-				</Button>
-			</div>
-		),
+		links: [
+			{ href: '/', label: '2025' },
+			{ href: 'https://2024.madison.rocks', label: '2024', target: '_blank' as const },
+		],
 	},
 	{
 		id: 2,
 		label: 'Cat Cards',
 		title: <Cat className="size-5" />,
-		content: (
-			<div className="flex flex-col gap-1 p-1">
-				<Button asChild variant="outline" className="w-full">
-					<Link href="/cats/2025">2025</Link>
-				</Button>
-				<Button asChild variant="outline" className="w-full">
-					<Link href="/cats/2024">2024</Link>
-				</Button>
-			</div>
-		),
+		links: [
+			{ href: '/cats/2025', label: '2025' },
+			{ href: '/cats/2024', label: '2024' },
+		],
 	},
 ]
 
@@ -58,9 +44,13 @@ export default function ToolbarExpandable() {
 	const ref = useRef<HTMLDivElement>(null)
 	const [isOpen, setIsOpen] = useState(false)
 
-	useClickOutside<HTMLDivElement>(ref, () => {
+	const closeMenu = () => {
 		setIsOpen(false)
 		setActive(null)
+	}
+
+	useClickOutside<HTMLDivElement>(ref, () => {
+		closeMenu()
 	})
 
 	return (
@@ -80,8 +70,7 @@ export default function ToolbarExpandable() {
 								onClick={() => {
 									if (!isOpen) setIsOpen(true)
 									if (active === item.id) {
-										setIsOpen(false)
-										setActive(null)
+										closeMenu()
 										return
 									}
 
@@ -113,7 +102,17 @@ export default function ToolbarExpandable() {
 
 											return (
 												<motion.div key={item.id} initial={{ opacity: 0 }} animate={{ opacity: isSelected ? 1 : 0 }} exit={{ opacity: 0 }}>
-													<div className={cn('px-0 pt-0 text-sm', isSelected ? 'block' : 'hidden')}>{item.content}</div>
+													<div className={cn('px-0 pt-0 text-sm', isSelected ? 'block' : 'hidden')}>
+														<div className="flex flex-col gap-1 p-1">
+															{item.links.map(link => (
+																<Button key={link.label} asChild variant="outline" className="w-full">
+																	<Link href={link.href} target={link.target} onClick={closeMenu}>
+																		{link.label}
+																	</Link>
+																</Button>
+															))}
+														</div>
+													</div>
 												</motion.div>
 											)
 										})}

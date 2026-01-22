@@ -72,6 +72,7 @@ export default async function SuperImage({ children, src, ...rest }: Props) {
 			whileHover="whileHover"
 			initial="initial"
 			whileInView={{ opacity: 1 }}
+			viewport={{ once: true }}
 			variants={variants}
 			{...motionProps}
 		>

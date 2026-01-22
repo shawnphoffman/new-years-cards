@@ -1,4 +1,4 @@
-import Image,{ ImageProps } from "next/image";
+import Image, { ImageProps } from "next/image";
 import { InView } from "./ui/in-view";
 
 export function MdxImage(props: ImageProps) {
@@ -12,7 +12,11 @@ export function MdxImage(props: ImageProps) {
 			transition={{ duration: 0.3, ease: 'easeInOut' }}
 			once={true}
 		>
-			<Image {...(props as ImageProps)} alt="" />
+			<Image
+				{...(props as ImageProps)}
+				placeholder="blur"
+				alt=""
+			/>
 		</InView>
 	)
 }

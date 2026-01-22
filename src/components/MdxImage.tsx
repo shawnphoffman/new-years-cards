@@ -10,7 +10,7 @@ export function MdxImage(props: ImageProps) {
 			}}
 			viewOptions={{ margin: '0px 0px -200px 0px' }}
 			transition={{ duration: 0.3, ease: 'easeInOut' }}
-			once={true}
+			// once={true}
 		>
 			<Image
 				{...(props as ImageProps)}

@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
@@ -137,10 +137,18 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
+}
+
+@import './carousel.css';
+
+.image-container {
+	/* max-x-80svmin makes sure that the images aren't huge regardless of device orientation*/
+	/* @apply shadow-[6px_6px_0_var(--background)] border-accent border-[3px] border-solid  mb-2 mr-2 aspect-auto w-auto max-w-[80svmin] max-h-[80svmin]; */
+	@apply shadow-[6px_6px_0_var(--background)]  mb-2 mr-2 aspect-auto w-auto max-w-[80svmin] max-h-[80svmin];
 }

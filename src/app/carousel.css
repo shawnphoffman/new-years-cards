@@ -1,0 +1,67 @@
+.embla {
+	--slide-spacing: 1rem;
+	--slide-size: auto;
+	/* --detail-medium-contrast: var(--background2); */
+	--detail-medium-contrast: --alpha(var(--foreground) / 30%);
+	--text-body: var(--accent);
+	--text-high-contrast-rgb-value: 49, 49, 49;
+	@apply m-auto;
+
+	.embla__viewport {
+		@apply overflow-hidden;
+	}
+	.embla__container {
+		@apply flex items-center;
+		touch-action: pan-y pinch-zoom;
+		margin-left: calc(var(--slide-spacing) * -1);
+	}
+	.embla__slide {
+		@apply transition-all;
+		transform: translate3d(0, 0, 0);
+		flex: 0 0 var(--slide-size);
+		min-width: 0;
+		padding-left: var(--slide-spacing);
+	}
+	.embla__slide:not(.is-snapped) {
+		@apply opacity-70;
+	}
+	.embla__slide:not(.is-in-view) {
+		@apply opacity-50;
+	}
+	.embla__controls {
+		@apply grid grid-cols-[auto_1fr] justify-between gap-4 mt-2;
+	}
+	.embla__buttons {
+		@apply grid gap-1 items-center grid-cols-[repeat(2,1fr)];
+	}
+	.embla__button {
+		@apply appearance-none bg-transparent touch-manipulation no-underline cursor-pointer shadow-[inset_0_0_0_0.2rem_var(--detail-medium-contrast)] size-10 z-1 text-[color:var(--text-body)] flex items-center justify-center m-0 p-0 rounded-full border-0;
+		-webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+		-webkit-appearance: none;
+
+		svg {
+			@apply size-[55%];
+			* {
+				@apply transition-colors;
+				fill: var(--accent);
+			}
+		}
+		&:hover svg * {
+			fill: var(--foreground);
+		}
+	}
+	.embla__dots {
+		@apply flex flex-wrap justify-end items-center gap-1.5;
+	}
+	.embla__dot {
+		@apply appearance-none bg-transparent touch-manipulation no-underline cursor-pointer flex items-center justify-center m-0 p-0 rounded-full border-0;
+		-webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+		-webkit-appearance: none;
+	}
+	.embla__dot:after {
+		@apply shadow-[inset_0_0_0_0.2rem_var(--detail-medium-contrast)] size-5 flex items-center content-[''] rounded-full;
+	}
+	.embla__dot--selected:after {
+		@apply shadow-[inset_0_0_0_0.35rem_var(--text-body)];
+	}
+}

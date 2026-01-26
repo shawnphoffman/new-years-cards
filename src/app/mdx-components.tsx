@@ -14,7 +14,7 @@ export function useMDXComponents(): MDXComponents {
 	return {
 		// Allows customizing built-in components, e.g. to add styling.
 		// h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
-		img: props => (<Image sizes="100vw" style={{ width: '100%', height: 'auto' }} {...(props as ImageProps)} alt="" />),
+		img: props => <Image sizes="100vw" style={{ width: '100%', height: 'auto' }} {...(props as ImageProps)} alt="" />,
 		p: props => (
 			<InView
 				variants={{
@@ -25,10 +25,11 @@ export function useMDXComponents(): MDXComponents {
 				transition={{ duration: 0.3, ease: 'easeInOut' }}
 				once={true}
 			>
-				<p className=''>
-					{props.children}
-				</p>
-			</InView>),
+				{/* <div className=''> */}
+				{props.children}
+				{/* </div> */}
+			</InView>
+		),
 		...components,
 	}
 }

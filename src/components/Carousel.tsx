@@ -33,7 +33,7 @@ const EmblaCarousel: React.FC<PropType> = props => {
 			<div className="embla__viewport overflow-visible!" ref={emblaRef}>
 				<div className="embla__container">
 					{children.map((child, index) => (
-						<div className="embla__slide" key={index} onClick={() => onIndexClick(index)}>
+						<div className="embla__slide self-stretch" key={index} onClick={() => onIndexClick(index)}>
 							{child}
 							{/* <div className="embla__slide__number">{index + 1}</div> */}
 						</div>

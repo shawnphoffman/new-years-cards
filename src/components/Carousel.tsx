@@ -30,7 +30,7 @@ const EmblaCarousel: React.FC<PropType> = props => {
 
 	return (
 		<section className="embla">
-			<div className="embla__viewport !overflow-visible" ref={emblaRef}>
+			<div className="embla__viewport overflow-visible!" ref={emblaRef}>
 				<div className="embla__container">
 					{children.map((child, index) => (
 						<div className="embla__slide" key={index} onClick={() => onIndexClick(index)}>

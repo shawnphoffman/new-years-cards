@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Card from '@/markdown/2025/card.mdx'
+import Card2 from '@/markdown/2025/card2.mdx'
 import { SidenoteProvider } from '@/components/Sidenote'
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function TwentyFive() {
 				<section>
 					<SidenoteProvider>
 						<Card />
+						<Card2 />
 					</SidenoteProvider>
 				</section>
 			</div>

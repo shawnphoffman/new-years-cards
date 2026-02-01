@@ -84,16 +84,7 @@ export default async function SuperVideo({ children, source, video }: Props) {
 			{...motionProps}
 		>
 			<div className="image-bg">
-				<video
-					preload="metadata"
-					autoPlay
-					muted
-					loop
-					playsInline
-					width="768"
-					{...video}
-					className={cn('not-prose border-10 dark:border-zinc-200 border-zinc-800 w-fit', video.className)}
-				>
+				<video preload="metadata" autoPlay muted loop playsInline width="768" {...video} className={cn('not-prose w-fit', video.className)}>
 					<source src={source?.src} type="video/mp4" {...source} />
 					Your browser does not support the video tag.
 				</video>

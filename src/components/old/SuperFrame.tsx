@@ -91,7 +91,7 @@ export default async function SuperFrame({ children, ...frame }: Props) {
 					width="768"
 					height="480"
 					{...frame}
-					className={cn('w- not-prose border-10 dark:border-zinc-200 border-zinc-800', frame.className || '')}
+					className={cn('not-prose ', frame.className || '')}
 				/>
 			</div>
 			{children && (

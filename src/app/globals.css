@@ -136,22 +136,79 @@ body {
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
+
+	--themebackground: oklch(75.81% 0.0524 143.52);
+	--themebackground2: oklch(93.67% 0.0738 221.75);
+	--themeforeground: oklch(32.39% 0.0449 77.93);
+	--themeaccent: oklch(47.39% 0.0449 77.93);
 }
 
 @layer base {
 	* {
-		@apply border-border outline-ring/50;
+		@apply outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-(--themebackground2) text-(--themeforeground);
 	}
 	main {
-		@apply w-[95%] px-[8%] max-w-7xl mx-auto;
+		@apply w-[95%] px-[8%] max-w-7xl mx-auto font-(family-name:--font-et-book);
 		counter-reset: sidenote-counter;
+	}
+	article {
+		@apply pt-30;
+	}
+	.image-container {
+		/* @apply shadow-[6px_6px_0_var(--background)]  mb-2 mr-2 aspect-auto w-auto max-w-[80svmin] max-h-[80svmin]; */
+		@apply shadow-[6px_6px_0_var(--themebackground)] mb-2 mr-2 aspect-auto w-auto max-w-[80svmin] border-[3px] border-solid border-(--themeaccent);
+	}
+	h1 {
+		@apply text-5xl sm:text-7xl mt-0 mb-6 w-fit;
+	}
+	h2 {
+		@apply text-4xl sm:text-5xl mt-8 mb-6 italic;
+	}
+	h3 {
+		@apply text-4xl mt-8 mb-6 italic text-foreground opacity-55;
+	}
+	.subtitle {
+		@apply block text-3xl italic my-4 text-(--themeaccent) clear-both;
+	}
+	.shawn {
+		@apply font-bold leading-none;
+	}
+	.signature {
+		@apply text-7xl font-(family-name:--font-royale) text-(--themeaccent);
+	}
+
+	footer {
+		@apply w-full text-center mb-4 text-5xl leading-none italic;
+	}
+	@supports (font-tech(color-COLRv1)) {
+		footer {
+			@apply font-(family-name:--font-nabla) font-(--shawnPalette) not-italic;
+		}
 	}
 }
 
-.image-container {
-	/* @apply shadow-[6px_6px_0_var(--background)]  mb-2 mr-2 aspect-auto w-auto max-w-[80svmin] max-h-[80svmin]; */
-	@apply shadow-[6px_6px_0_var(--background)]  mb-2 mr-2 aspect-auto w-auto max-w-[80svmin];
+/* DEBUT */
+h1 {
+	@apply text-5xl sm:text-7xl font-(family-name:--font-elsie);
+}
+h2 {
+	@apply text-4xl sm:text-5xl font-(family-name:--font-elsie);
+}
+h3 {
+	@apply font-(family-name:--font-elsie);
+}
+.subtitle {
+	@apply text-4xl font-(family-name:--font-montez) font-bold text-(--themeaccent);
+}
+main {
+	@apply font-(family-name:--font-lexend);
+}
+p {
+	@apply text-lg;
+}
+footer {
+	font-palette: --1;
 }

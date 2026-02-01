@@ -2,8 +2,8 @@
 	--slide-spacing: 1rem;
 	--slide-size: auto;
 	/* --detail-medium-contrast: var(--background2); */
-	--detail-medium-contrast: --alpha(var(--foreground) / 30%);
-	--text-body: var(--accent);
+	--detail-medium-contrast: --alpha(var(--themeforeground) / 30%);
+	--text-body: var(--themeaccent);
 	--text-high-contrast-rgb-value: 49, 49, 49;
 	@apply m-auto;
 
@@ -43,11 +43,11 @@
 			@apply size-[55%];
 			* {
 				@apply transition-colors;
-				fill: var(--accent);
+				fill: var(--themeaccent);
 			}
 		}
 		&:hover svg * {
-			fill: var(--foreground);
+			fill: var(--themeforeground);
 		}
 	}
 	.embla__dots {

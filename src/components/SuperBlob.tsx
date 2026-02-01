@@ -45,12 +45,12 @@ export default async function SuperBlob({ children, fileName }: Props) {
 	const userAgent = headersList.get('user-agent') || ''
 	const isMobile = /Mobile|Android|iPhone/i.test(userAgent)
 
-  const { blobs } = await list({
-    prefix: fileName,
-    limit: 10,
+	const { blobs } = await list({
+		prefix: fileName,
+		limit: 10,
 		token: process.env.SHAWN_BLOB_READ_WRITE_TOKEN,
-  })
-  const { url } = blobs[0]
+	})
+	const { url } = blobs[0]
 
 	const variants: Variants = !isMobile
 		? {
@@ -91,14 +91,7 @@ export default async function SuperBlob({ children, fileName }: Props) {
 			{...motionProps}
 		>
 			<div className="image-bg">
-				<video
-					preload="metadata"
-					autoPlay
-					muted
-					loop
-					playsInline
-					width="768"
-					className={cn('not-prose border-10 dark:border-zinc-200 border-zinc-800 w-fit')}>
+				<video preload="metadata" autoPlay muted loop playsInline width="768" className={cn('not-prose w-fit')}>
 					<source src={url} type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>

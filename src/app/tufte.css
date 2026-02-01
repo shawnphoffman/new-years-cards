@@ -4,6 +4,7 @@ section {
 }
 
 p,
+div,
 div.p,
 dl,
 ol,
@@ -59,7 +60,7 @@ figure {
 }
 
 figcaption {
-	@apply block w-full leading-tight text-lg mr-0 mt-0.5 px-2 py-1 text-(--foreground) max-w-full text-right absolute bottom-0 right-0 bg-(--background)/95;
+	@apply block w-full leading-tight text-lg mr-0 mt-0.5 px-2 py-1 text-(--foreground) max-w-full text-right absolute bottom-0 right-0 bg-(--themebackground)/95;
 	/* w-[calc(100%_-_6px)] bottom-[3px] right-[3px] */
 }
 
@@ -94,7 +95,7 @@ a {
 }
 
 .sidenote-number-internal {
-	@apply text-[color:var(--accent)] text-lg -top-2 font-bold;
+	@apply text-(--themeaccent) text-lg -top-2 font-bold;
 }
 
 blockquote .sidenote,
@@ -166,7 +167,7 @@ input.margin-toggle {
 }
 
 label.sidenote-number {
-	@apply text-[color:var(--accent)] max-h-8 font-bold inline-block;
+	@apply text-[--themeaccent] max-h-8 font-bold inline-block;
 }
 
 label.margin-toggle:not(.sidenote-number) {
@@ -253,7 +254,7 @@ label.margin-toggle:not(.sidenote-number) {
 	}
 
 	label {
-		@apply text-[color:var(--accent)] cursor-pointer;
+		@apply text-(--themeaccent) cursor-pointer;
 	}
 
 	div.table-wrapper,
@@ -264,5 +265,10 @@ label.margin-toggle:not(.sidenote-number) {
 	/* img:not(.shawn-head) { */
 	.image-container {
 		@apply w-full;
+	}
+
+	.image-container {
+		/* max-x-80svmin makes sure that the images aren't huge regardless of device orientation*/
+		@apply shadow-[6px_6px_0_var(--themebackground)] border-[--themeaccent] border-[3px] border-solid  mb-2 mr-2 aspect-auto w-auto max-w-[80svmin] max-h-[80svmin];
 	}
 }

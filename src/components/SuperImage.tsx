@@ -82,12 +82,7 @@ export default async function SuperImage({ children, src, ...rest }: Props) {
 			{...motionProps}
 		>
 			<div className="image-bg">
-				<Image
-					src={src}
-					{...rest}
-					className={cn('not-prose border-10 dark:border-zinc-200 border-zinc-800 w-fit', rest.className)}
-					alt={alt}
-				/>
+				<Image src={src} {...rest} className={cn('not-prose', rest.className)} alt={alt} />
 			</div>
 			{children && (
 				<motion.figcaption variants={captionVariants} {...captionMotionProps}>

@@ -45,7 +45,7 @@ export function AutoplayVideo({ source, video = {}, className, forcePlay = false
 			playsInline
 			width="768"
 			{...video}
-			className={cn('not-prose border-10 dark:border-zinc-200 border-zinc-800 w-fit', video.className, className)}
+			className={cn('not-prose  w-fit', video.className, className)}
 		>
 			<source src={source?.src} type="video/mp4" {...source} />
 			Your browser does not support the video tag.

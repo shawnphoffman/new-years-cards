@@ -1,5 +1,5 @@
 import Image, { ImageProps } from "next/image";
-import { InView } from "./ui/in-view";
+import { InView } from "../ui/in-view";
 
 export function MdxImage(props: ImageProps) {
 	return (

@@ -35,7 +35,7 @@
 		@apply grid gap-1 items-center grid-cols-[repeat(2,1fr)];
 	}
 	.embla__button {
-		@apply appearance-none bg-transparent touch-manipulation no-underline cursor-pointer shadow-[inset_0_0_0_0.2rem_var(--detail-medium-contrast)] size-10 z-1 text-[color:var(--text-body)] flex items-center justify-center m-0 p-0 rounded-full border-0;
+		@apply appearance-none bg-transparent touch-manipulation no-underline cursor-pointer shadow-[inset_0_0_0_0.2rem_var(--detail-medium-contrast)] size-10 z-1 text-(--text-body) flex items-center justify-center m-0 p-0 rounded-full border-0;
 		-webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
 		-webkit-appearance: none;
 
@@ -63,5 +63,9 @@
 	}
 	.embla__dot--selected:after {
 		@apply shadow-[inset_0_0_0_0.35rem_var(--text-body)];
+	}
+	img,
+	video {
+		@apply max-h-[500px] w-auto;
 	}
 }

@@ -92,11 +92,11 @@ export default async function SuperBlob({ children, fileName }: Props) {
 		>
 			<div className="image-bg">
 				<video
-					//controls
-					preload="none"
+					preload="metadata"
 					autoPlay
 					muted
 					loop
+					playsInline
 					width="768"
 					className={cn('not-prose border-10 dark:border-zinc-200 border-zinc-800 w-fit')}>
 					<source src={url} type="video/mp4" />

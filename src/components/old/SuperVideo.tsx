@@ -40,7 +40,7 @@ const captionMotionProps: MotionProps = {
 	},
 }
 
-export default async function SuperImage({ children, source, video }: Props) {
+export default async function SuperVideo({ children, source, video }: Props) {
 	const headersList = await headers()
 	const userAgent = headersList.get('user-agent') || ''
 	const isMobile = /Mobile|Android|iPhone/i.test(userAgent)
@@ -85,11 +85,11 @@ export default async function SuperImage({ children, source, video }: Props) {
 		>
 			<div className="image-bg">
 				<video
-					// controls
-					preload="none"
+					preload="metadata"
 					autoPlay
 					muted
 					loop
+					playsInline
 					width="768"
 					{...video}
 					className={cn('not-prose border-10 dark:border-zinc-200 border-zinc-800 w-fit', video.className)}
@@ -97,12 +97,6 @@ export default async function SuperImage({ children, source, video }: Props) {
 					<source src={source?.src} type="video/mp4" {...source} />
 					Your browser does not support the video tag.
 				</video>
-				{/* <Image
-					src={src}
-					{...rest}
-					className={cn('not-prose border-10 dark:border-zinc-200 border-zinc-800 w-fit', rest.className)}
-					alt={alt}
-				/> */}
 			</div>
 			{children && (
 				<motion.figcaption variants={captionVariants} {...captionMotionProps}>

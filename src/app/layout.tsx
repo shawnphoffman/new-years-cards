@@ -26,7 +26,6 @@ type Props = Readonly<{ children: React.ReactNode }>
 export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			{/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
 			<body className="antialiased overflow-x-hidden w-full scroll-smooth">
 				<ThemeProvider attribute="class">
 					<div className="flex flex-col items-center justify-center">

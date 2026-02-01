@@ -23,6 +23,8 @@ const ITEMS = [
 		title: <Clock className="size-5" />,
 		links: [
 			{ href: '/', label: '2025' },
+			// TODO REMOVE THIS
+			{ href: '/temp', label: 'temp pics' },
 			{ href: 'https://2024.madison.rocks', label: '2024', target: '_blank' as const },
 		],
 	},

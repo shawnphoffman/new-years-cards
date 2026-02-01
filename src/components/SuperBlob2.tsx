@@ -8,6 +8,7 @@ import { AutoplayVideo } from '@/components/old/AutoplayVideo'
 type Props = {
 	fileName: string
 	children?: React.ReactNode
+	forcePlay?: boolean
 }
 
 const motionProps: MotionProps = {
@@ -40,17 +41,17 @@ const captionMotionProps: MotionProps = {
 	},
 }
 
-export default async function SuperBlob2({ children, fileName }: Props) {
+export default async function SuperBlob2({ children, fileName, forcePlay = false }: Props) {
 	const headersList = await headers()
 	const userAgent = headersList.get('user-agent') || ''
 	const isMobile = /Mobile|Android|iPhone/i.test(userAgent)
 
-  const { blobs } = await list({
-    prefix: fileName,
-    limit: 10,
+	const { blobs } = await list({
+		prefix: fileName,
+		limit: 10,
 		token: process.env.SHAWN_BLOB_READ_WRITE_TOKEN,
-  })
-  const { url } = blobs[0]
+	})
+	const { url } = blobs[0]
 
 	const variants: Variants = !isMobile
 		? {
@@ -91,7 +92,7 @@ export default async function SuperBlob2({ children, fileName }: Props) {
 			{...motionProps}
 		>
 			<div className="image-bg">
-				<AutoplayVideo source={{ src: url, type: 'video/mp4' }} />
+				<AutoplayVideo source={{ src: url, type: 'video/mp4' }} forcePlay={forcePlay} />
 			</div>
 			{children && (
 				<motion.figcaption variants={captionVariants} {...captionMotionProps}>

@@ -8,15 +8,25 @@ type AutoplayVideoProps = {
 	source: ComponentProps<'source'>
 	video?: ComponentProps<'video'>
 	className?: string
+	forcePlay?: boolean
 }
 
 /**
  * Client-side video wrapper that triggers play() when in view.
  * Required for reliable autoplay on Firefox mobile and other strict browsers.
  */
-export function AutoplayVideo({ source, video = {}, className }: AutoplayVideoProps) {
+export function AutoplayVideo({ source, video = {}, className, forcePlay = false }: AutoplayVideoProps) {
 	const ref = useRef<HTMLVideoElement>(null)
 	const isInView = useInView(ref, { amount: 0.5, once: true })
+
+	useEffect(() => {
+		if (forcePlay) {
+			const el = ref.current
+			if (!el) return
+			const p = el.play()
+			if (p?.catch) p.catch(() => {})
+		}
+	}, [forcePlay])
 
 	useEffect(() => {
 		const el = ref.current

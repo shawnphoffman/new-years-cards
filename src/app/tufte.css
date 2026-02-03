@@ -1,273 +1,275 @@
-section {
-	/* @apply py-4 clear-both space-y-4; */
-	@apply py-4 clear-both;
-}
-
-p,
-div,
-div.p,
-dl,
-ol,
-ul {
-	@apply text-xl leading-normal;
-}
-
-p,
-div.p {
-	/* @apply align-baseline my-5 pr-0; */
-	@apply align-baseline pr-0 mt-4;
-}
-
-blockquote {
-	@apply text-[1.4rem];
-}
-
-blockquote p,
-blockquote div.p {
-	@apply w-[65%] mr-10;
-}
-
-blockquote footer {
-	@apply w-[65%] text-[1.1rem] text-right;
-}
-
-section > div.p,
-section > p,
-section > footer,
-section > div,
-section > table {
-	@apply w-[65%];
-}
-
-/* 50 + 5 == 55, to be the same width as paragraph */
-section > dl,
-section > ol,
-section > ul {
-	@apply w-6/12;
-	-webkit-padding-start: 5%;
-}
-
-dt:not(:first-child),
-li:not(:first-child) {
-	@apply mt-1;
-}
-
-figure {
-	@apply text-[100%] align-baseline max-w-[65%] mt-0 mb-[3em] mx-0 p-0 border-0;
-	font: inherit;
-	-webkit-margin-start: 0;
-	-webkit-margin-end: 0;
-}
-
-figcaption,
-figcaption div {
-	@apply block w-full leading-tight text-base mr-0 mt-0.5 px-2 py-1 text-(--themeforeground) max-w-full text-right absolute bottom-0 right-0 bg-(--themebackground)/95;
-	&.mobile {
-		@apply relative mt-0;
-	}
-}
-
-a {
-	@apply text-inherit underline underline-offset-[0.1em] decoration-[0.05em] hover:decoration-2 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)];
-}
-
-.sidenote,
-.marginnote {
-	@apply z-50 flex float-right clear-right mr-[-65%] max-w-[55%] w-fit text-lg leading-tight align-baseline relative mt-[0.3rem] mb-0 px-4 py-2 ps-2 rounded bg-white/40 p-1 shadow-lg backdrop-blur-lg text-pretty;
-}
-
-.fullwidth {
-	.marginnote,
-	.sidenote {
-		@apply w-fit ms-0 left-0 mb-4 max-w-full clear-both float-right mr-0;
-	}
-}
-
-.sidenote-number {
-	counter-increment: sidenote-counter;
-}
-
-.sidenote-number:after,
-.sidenote-number-internal,
-.sidenote:before {
-	@apply relative align-baseline;
-}
-
-.sidenote-number:after {
-	@apply content-[counter(sidenote-counter)] text-lg -top-2 left-[0.1rem];
-}
-
-.sidenote-number-internal {
-	@apply text-(--themeaccent) text-lg -top-2 font-bold;
-}
-
-blockquote .sidenote,
-blockquote .marginnote {
-	@apply mr-[-82%] min-w-[59%] text-left;
-}
-
-div.fullwidth,
-table.fullwidth {
-	@apply w-full;
-}
-
-div.table-wrapper {
-	@apply overflow-x-auto;
-	font-family: 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', sans-serif;
-}
-
-.sans {
-	@apply tracking-[0.03em];
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
-}
-
-code,
-pre > code {
-	@apply text-base leading-[1.42];
-	font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-	-webkit-text-size-adjust: 100%;
-	/* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
-}
-
-.sans > code {
-	@apply text-[1.2rem];
-}
-
-h1 > code,
-h2 > code,
-h3 > code {
-	@apply text-[0.8em];
-}
-
-.marginnote > code,
-.sidenote > code {
-	@apply text-base;
-}
-
-/* .sidenote img {
-	@apply m-0;
-} */
-
-pre > code {
-	@apply text-[0.9rem] w-[52.5%] overflow-x-auto block ml-[2.5%];
-}
-
-pre.fullwidth > code {
-	@apply w-full;
-}
-
-.fullwidth {
-	@apply clear-both max-w-full;
-}
-
-span.newthought {
-	@apply text-[1.2em];
-	font-variant: small-caps;
-}
-
-input.margin-toggle {
-	@apply hidden;
-}
-
-label.sidenote-number {
-	@apply text-[--themeaccent] max-h-8 font-bold inline-block;
-}
-
-label.margin-toggle:not(.sidenote-number) {
-	@apply hidden;
-}
-
-.iframe-wrapper {
-	@apply relative h-0 pt-[25px] pb-[56.25%];
-	/* 16:9 */
-}
-
-.iframe-wrapper iframe {
-	@apply absolute w-full h-full left-0 top-0;
-}
-
-@media (max-width: 1024px) {
-	main {
-		@apply w-full px-[8%];
-	}
-}
-@media (max-width: 760px) {
-	/* @media (max-width: 40rem) { */
-	main {
-		@apply px-[4%];
+@layer base {
+	section {
+		/* @apply py-4 clear-both space-y-4; */
+		@apply py-4 clear-both;
 	}
 
-	hr,
-	section > p,
-	section > div.p,
-	section > div,
-	section > footer,
-	section > table {
-		@apply w-full;
+	p,
+	div,
+	div.p,
+	dl,
+	ol,
+	ul {
+		@apply text-xl leading-normal;
 	}
 
-	pre > code {
-		@apply w-[97%];
-	}
-
-	section > dl,
-	section > ol,
-	section > ul {
-		@apply w-[90%];
-	}
-
-	figure {
-		@apply max-w-full;
-	}
-
-	figcaption,
-	figure.fullwidth figcaption {
-		@apply max-w-none mr-0;
+	p,
+	div.p {
+		/* @apply align-baseline my-5 pr-0; */
+		@apply align-baseline pr-0 mt-4;
 	}
 
 	blockquote {
-		@apply ml-[1.5em] mr-0;
+		@apply text-[1.4rem];
 	}
 
 	blockquote p,
-	blockquote div.p,
+	blockquote div.p {
+		@apply w-[65%] mr-10;
+	}
+
 	blockquote footer {
+		@apply w-[65%] text-[1.1rem] text-right;
+	}
+
+	section > div.p,
+	section > p,
+	section > footer,
+	section > div,
+	section > table {
+		@apply w-[65%] my-4;
+	}
+
+	/* 50 + 5 == 55, to be the same width as paragraph */
+	section > dl,
+	section > ol,
+	section > ul {
+		@apply w-6/12;
+		-webkit-padding-start: 5%;
+	}
+
+	dt:not(:first-child),
+	li:not(:first-child) {
+		@apply mt-1;
+	}
+
+	figure {
+		@apply text-[100%] align-baseline max-w-[65%] mt-0 mb-[3em] mx-0 p-0 border-0;
+		font: inherit;
+		-webkit-margin-start: 0;
+		-webkit-margin-end: 0;
+	}
+
+	figcaption,
+	figcaption div {
+		@apply block w-full leading-tight text-base mr-0 mt-0.5 px-2 py-1 text-(--themeforeground) max-w-full text-right absolute bottom-0 right-0 bg-(--themebackground)/95;
+		&.mobile {
+			@apply relative mt-0;
+		}
+	}
+
+	a {
+		@apply text-inherit underline underline-offset-[0.1em] decoration-[0.05em] hover:decoration-2 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)];
+	}
+
+	.sidenote,
+	.marginnote {
+		@apply z-50 flex float-right clear-right mr-[-65%] max-w-[55%] w-fit text-lg leading-tight align-baseline relative mt-[0.3rem] mb-0 px-4 py-2 ps-2 rounded bg-white/40 p-1 shadow-lg backdrop-blur-lg text-pretty;
+	}
+
+	.fullwidth {
+		.marginnote,
+		.sidenote {
+			@apply w-fit ms-0 left-0 mb-4 max-w-full clear-both float-right mr-0;
+		}
+	}
+
+	.sidenote-number {
+		counter-increment: sidenote-counter;
+	}
+
+	.sidenote-number:after,
+	.sidenote-number-internal,
+	.sidenote:before {
+		@apply relative align-baseline;
+	}
+
+	.sidenote-number:after {
+		@apply content-[counter(sidenote-counter)] text-lg -top-2 left-[0.1rem];
+	}
+
+	.sidenote-number-internal {
+		@apply text-(--themeaccent) text-lg -top-2 font-bold;
+	}
+
+	blockquote .sidenote,
+	blockquote .marginnote {
+		@apply mr-[-82%] min-w-[59%] text-left;
+	}
+
+	div.fullwidth,
+	table.fullwidth {
 		@apply w-full;
+	}
+
+	div.table-wrapper {
+		@apply overflow-x-auto;
+		font-family: 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', sans-serif;
+	}
+
+	.sans {
+		@apply tracking-[0.03em];
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+	}
+
+	code,
+	pre > code {
+		@apply text-base leading-[1.42];
+		font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+		-webkit-text-size-adjust: 100%;
+		/* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+	}
+
+	.sans > code {
+		@apply text-[1.2rem];
+	}
+
+	h1 > code,
+	h2 > code,
+	h3 > code {
+		@apply text-[0.8em];
+	}
+
+	.marginnote > code,
+	.sidenote > code {
+		@apply text-base;
+	}
+
+	/* .sidenote img {
+	@apply m-0;
+} */
+
+	pre > code {
+		@apply text-[0.9rem] w-[52.5%] overflow-x-auto block ml-[2.5%];
+	}
+
+	pre.fullwidth > code {
+		@apply w-full;
+	}
+
+	.fullwidth {
+		@apply clear-both max-w-full;
+	}
+
+	span.newthought {
+		@apply text-[1.2em];
+		font-variant: small-caps;
+	}
+
+	input.margin-toggle {
+		@apply hidden;
+	}
+
+	label.sidenote-number {
+		@apply text-[--themeaccent] max-h-8 font-bold inline-block;
 	}
 
 	label.margin-toggle:not(.sidenote-number) {
 		@apply hidden;
 	}
 
-	.sidenote,
-	.marginnote {
-		@apply flex float-left clear-both w-[95%] align-baseline relative mx-[2.5%] my-1 left-4 px-4 ps-2 py-2 rounded bg-white/20 p-1 shadow-lg backdrop-blur-lg indent-0 max-w-none;
+	.iframe-wrapper {
+		@apply relative h-0 pt-[25px] pb-[56.25%];
+		/* 16:9 */
 	}
 
-	.fullwidth {
-		.marginnote,
-		.sidenote {
-			@apply w-fit ms-0 left-0 max-w-full clear-both float-left;
+	.iframe-wrapper iframe {
+		@apply absolute w-full h-full left-0 top-0;
+	}
+
+	@media (max-width: 1024px) {
+		main {
+			@apply w-full px-[8%];
 		}
 	}
+	@media (max-width: 760px) {
+		/* @media (max-width: 40rem) { */
+		main {
+			@apply px-[4%];
+		}
 
-	.margin-toggle:checked + .sidenote,
-	.margin-toggle:checked + .marginnote {
-		@apply block float-left clear-both w-[95%] align-baseline relative mx-[2.5%] my-4 left-4;
-	}
+		hr,
+		section > p,
+		section > div.p,
+		section > div,
+		section > footer,
+		section > table {
+			@apply w-full;
+		}
 
-	label {
-		@apply text-(--themeaccent) cursor-pointer;
-	}
+		pre > code {
+			@apply w-[97%];
+		}
 
-	div.table-wrapper,
-	table {
-		@apply w-[85%];
-	}
+		section > dl,
+		section > ol,
+		section > ul {
+			@apply w-[90%];
+		}
 
-	/* img:not(.shawn-head) { */
-	.image-container {
-		/* @apply w-full; */
-		@apply w-fit max-h-[80dvh] min-w-[45dvw];
+		figure {
+			@apply max-w-full;
+		}
+
+		figcaption,
+		figure.fullwidth figcaption {
+			@apply max-w-none mr-0;
+		}
+
+		blockquote {
+			@apply ml-[1.5em] mr-0;
+		}
+
+		blockquote p,
+		blockquote div.p,
+		blockquote footer {
+			@apply w-full;
+		}
+
+		label.margin-toggle:not(.sidenote-number) {
+			@apply hidden;
+		}
+
+		.sidenote,
+		.marginnote {
+			@apply flex float-left clear-both w-[95%] align-baseline relative mx-[2.5%] my-1 left-4 px-4 ps-2 py-2 rounded bg-white/20 p-1 shadow-lg backdrop-blur-lg indent-0 max-w-none;
+		}
+
+		.fullwidth {
+			.marginnote,
+			.sidenote {
+				@apply w-fit ms-0 left-0 max-w-full clear-both float-left;
+			}
+		}
+
+		.margin-toggle:checked + .sidenote,
+		.margin-toggle:checked + .marginnote {
+			@apply block float-left clear-both w-[95%] align-baseline relative mx-[2.5%] my-4 left-4;
+		}
+
+		label {
+			@apply text-(--themeaccent) cursor-pointer;
+		}
+
+		div.table-wrapper,
+		table {
+			@apply w-[85%];
+		}
+
+		/* img:not(.shawn-head) { */
+		.image-container {
+			/* @apply w-full; */
+			@apply w-fit max-h-[80dvh] min-w-[45dvw];
+		}
 	}
 }

@@ -9,7 +9,7 @@ div.p,
 dl,
 ol,
 ul {
-	@apply text-xl leading-relaxed;
+	@apply text-xl leading-normal;
 }
 
 p,
@@ -59,9 +59,9 @@ figure {
 	-webkit-margin-end: 0;
 }
 
-figcaption {
-	@apply block w-full leading-tight text-lg mr-0 mt-0.5 px-2 py-1 text-(--themeforeground) max-w-full text-right absolute bottom-0 right-0 bg-(--themebackground)/95;
-	/* w-[calc(100%_-_6px)] bottom-[3px] right-[3px] */
+figcaption,
+figcaption div {
+	@apply block w-full leading-tight text-base mr-0 mt-0.5 px-2 py-1 text-(--themeforeground) max-w-full text-right absolute bottom-0 right-0 bg-(--themebackground)/95;
 	&.mobile {
 		@apply relative mt-0;
 	}
@@ -226,7 +226,7 @@ label.margin-toggle:not(.sidenote-number) {
 	}
 
 	blockquote {
-		@apply ml-[1.5em] mr-[0em];
+		@apply ml-[1.5em] mr-0;
 	}
 
 	blockquote p,
@@ -267,6 +267,7 @@ label.margin-toggle:not(.sidenote-number) {
 
 	/* img:not(.shawn-head) { */
 	.image-container {
-		@apply w-full;
+		/* @apply w-full; */
+		@apply w-fit max-h-[80dvh] min-w-[45dvw];
 	}
 }

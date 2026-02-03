@@ -66,6 +66,6 @@
 	}
 	img,
 	video {
-		@apply max-h-[500px] w-auto;
+		@apply max-h-[500px] w-full;
 	}
 }

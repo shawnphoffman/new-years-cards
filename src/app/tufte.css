@@ -269,9 +269,4 @@ label.margin-toggle:not(.sidenote-number) {
 	.image-container {
 		@apply w-full;
 	}
-
-	/* max-x-80svmin makes sure that the images aren't huge regardless of device orientation*/
-	/* .image-container {
-		@apply shadow-[6px_6px_0_var(--themebackground)] border-[--themeaccent] border-[3px] border-solid  mb-2 mr-2 aspect-auto w-auto max-w-[80svmin];
-	} */
 }

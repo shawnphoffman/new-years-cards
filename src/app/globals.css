@@ -157,7 +157,7 @@ body {
 	article {
 		@apply pt-30;
 	}
-	section > div.image-container {
+	section div.image-container {
 		@apply shadow-[6px_6px_0_var(--themebackground)] mb-2 mr-2 aspect-auto max-w-[90svmin] sm:max-w-[80svmin] border-[3px] border-solid border-(--themeaccent) relative w-fit max-h-[80dvh] min-w-[max(20dvw,250px)];
 	}
 	h1 {

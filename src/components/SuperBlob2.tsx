@@ -51,6 +51,9 @@ export default async function SuperBlob2({ children, fileName, forcePlay = false
 		limit: 10,
 		token: process.env.SHAWN_BLOB_READ_WRITE_TOKEN,
 	})
+
+	if (!blobs?.length) return null
+
 	const { url } = blobs[0]
 
 	const variants: Variants = !isMobile

@@ -158,7 +158,7 @@ body {
 		@apply pt-30;
 	}
 	.image-container {
-		@apply shadow-[6px_6px_0_var(--themebackground)] mb-2 mr-2 aspect-auto w-auto max-w-[80svmin] border-[3px] border-solid border-(--themeaccent);
+		@apply shadow-[6px_6px_0_var(--themebackground)] mb-2 mr-2 aspect-auto w-auto max-w-[90svmin] sm:max-w-[80svmin] border-[3px] border-solid border-(--themeaccent) relative;
 	}
 	h1 {
 		@apply text-5xl sm:text-7xl mt-0 mb-6 w-fit;

@@ -40,6 +40,7 @@ export const usePrevNextButtons = (emblaApi: EmblaCarouselType | undefined): Use
 	useEffect(() => {
 		if (!emblaApi) return
 
+		// eslint-disable-next-line
 		onSelect(emblaApi)
 		emblaApi.on('reInit', onSelect).on('select', onSelect)
 	}, [emblaApi, onSelect])

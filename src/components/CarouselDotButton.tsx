@@ -34,6 +34,7 @@ export const useDotButton = (emblaApi: EmblaCarouselType | undefined): UseDotBut
 	useEffect(() => {
 		if (!emblaApi) return
 
+		// eslint-disable-next-line
 		onInit(emblaApi)
 		onSelect(emblaApi)
 		emblaApi.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect)

@@ -23,8 +23,6 @@ const ITEMS = [
 		title: <Clock className="size-5" />,
 		links: [
 			{ href: '/', label: '2025' },
-			// TODO REMOVE THIS
-			{ href: '/temp', label: 'temp pics' },
 			{ href: 'https://2024.madison.rocks', label: '2024', target: '_blank' as const },
 		],
 	},
@@ -34,7 +32,7 @@ const ITEMS = [
 		title: <Cat className="size-5" />,
 		links: [
 			{ href: '/cats/2025', label: '2025' },
-			{ href: '/cats/2024', label: '2024' },
+			// { href: '/cats/2024', label: '2024' },
 		],
 	},
 ]

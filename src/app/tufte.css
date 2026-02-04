@@ -72,9 +72,12 @@
 		@apply text-inherit underline underline-offset-[0.1em] decoration-[0.05em] hover:decoration-2 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)];
 	}
 
+	div.marginnote {
+		@apply md:-mr-8 md:relative md:right-8 md:mt-0 md:max-w-[30%];
+	}
 	.sidenote,
 	.marginnote {
-		@apply z-50 flex float-right clear-right mr-[-65%] max-w-[55%] w-fit text-lg leading-tight align-baseline relative mt-[0.3rem] mb-0 px-4 py-2 ps-2 rounded bg-white/40 p-1 shadow-lg backdrop-blur-lg text-pretty;
+		@apply z-50 flex float-right clear-right mr-[-60%] max-w-[45%] w-fit text-lg leading-tight align-baseline relative mt-[0.3rem] mb-0 px-4 py-2 ps-2 rounded bg-white/40 p-1 shadow-lg backdrop-blur-lg text-pretty md:relative md:right-8 md:mt-0;
 	}
 
 	.fullwidth {
@@ -189,7 +192,7 @@
 
 	@media (max-width: 1024px) {
 		main {
-			@apply w-full px-[8%];
+			@apply w-full px-[2%];
 		}
 	}
 	@media (max-width: 760px) {
@@ -242,7 +245,7 @@
 
 		.sidenote,
 		.marginnote {
-			@apply flex float-left clear-both w-[95%] align-baseline relative mx-[2.5%] my-1 left-4 px-4 ps-2 py-2 rounded bg-white/20 p-1 shadow-lg backdrop-blur-lg indent-0 max-w-none;
+			@apply flex float-left clear-both w-[95%] align-baseline relative my-2 mx-0 left-2 px-4 ps-2 py-2 rounded bg-white/20 p-1 shadow-lg backdrop-blur-lg indent-0 max-w-none;
 		}
 
 		.fullwidth {

@@ -6,7 +6,13 @@ import Image from 'next/image'
 
 import BlueBell from '@/components/img/cat_bluebell.png'
 import Scoop from '@/components/img/cat_scoop.png'
-import Shawn from '@/components/img/shawn3.png'
+import Shawn from '@/components/img/1.png'
+import Shawn2 from '@/components/img/2.png'
+import Shawn3 from '@/components/img/3.png'
+import Shawn4 from '@/components/img/4.png'
+import Shawn5 from '@/components/img/5.png'
+import Shawn6 from '@/components/img/6.png'
+import Shawn7 from '@/components/img/7.png'
 
 const motionProps: MotionProps = {
 	// initial: { opacity: 0, scale: 0 },
@@ -51,21 +57,33 @@ export function SidenoteProvider({ children }: { children: React.ReactNode }) {
 export const ScoopHead = () => <Image src={Scoop} height={36} alt="Scoop" title="Notes from Scoop" className="shawn-head" />
 export const BlueBellHead = () => <Image src={BlueBell} height={36} alt="BlueBell" title="Notes from BlueBell" className="shawn-head" />
 export const ShawnHead = () => <Image src={Shawn} height={36} alt="Shawn" title="Notes from Shawn" className="shawn-head" />
+export const Shawn2Head = () => <Image src={Shawn2} height={36} alt="Shawn2" title="Notes from Shawn2" className="shawn-head" />
+export const Shawn3Head = () => <Image src={Shawn3} height={36} alt="Shawn3" title="Notes from Shawn3" className="shawn-head" />
+export const Shawn4Head = () => <Image src={Shawn4} height={36} alt="Shawn4" title="Notes from Shawn4" className="shawn-head" />
+export const Shawn5Head = () => <Image src={Shawn5} height={36} alt="Shawn5" title="Notes from Shawn5" className="shawn-head" />
+export const Shawn6Head = () => <Image src={Shawn6} height={36} alt="Shawn6" title="Notes from Shawn6" className="shawn-head" />
+export const Shawn7Head = () => <Image src={Shawn7} height={36} alt="Shawn7" title="Notes from Shawn7" className="shawn-head" />
+
+const SHAWN_HEADS = [ShawnHead, Shawn2Head, Shawn3Head, Shawn4Head, Shawn5Head, Shawn6Head, Shawn7Head]
 
 export default function Sidenote({ children, index, head }: Props) {
 	const id = useId()
+	const shawnHeadIndex = useMemo(() => [...id].reduce((acc, c) => acc + c.charCodeAt(0), 0) % SHAWN_HEADS.length, [id])
 
-	let Head = ShawnHead
+	let Head: () => React.JSX.Element
 	if (head === 'bluebell') {
 		Head = BlueBellHead
 	} else if (head === 'scoop') {
 		Head = ScoopHead
+	} else {
+		Head = SHAWN_HEADS[shawnHeadIndex]
 	}
 
 	// if (type === 'marginnote') {
 	if (!index) {
 		return (
-			<div className="not-prose">
+			// <div className="not-prose">
+			<>
 				<label htmlFor={id} className="margin-toggle">
 					{/* &#8853; */}
 					&#8226;
@@ -75,12 +93,14 @@ export default function Sidenote({ children, index, head }: Props) {
 					<Head />
 					<span>{children}</span>
 				</motion.div>
-			</div>
+			</>
+			// </div>
 		)
 	}
 
 	return (
-		<div className="not-prose">
+		// <div className="not-prose">
+		<>
 			<input type="checkbox" id={id} className="margin-toggle" />
 			<label htmlFor={id} className="margin-toggle sidenote-number"></label>
 			<motion.div {...motionProps} className="sidenote flex flex-row items-center gap-2 select-none">
@@ -88,7 +108,8 @@ export default function Sidenote({ children, index, head }: Props) {
 				<span className="sidenote-number-internal self-start">{index}</span>
 				<div>{children}</div>
 			</motion.div>
-		</div>
+		</>
+		// </div>
 	)
 }
 

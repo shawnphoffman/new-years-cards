@@ -106,7 +106,7 @@ export default function Sidenote({ children, index, head }: Props) {
 			<motion.div {...motionProps} className="sidenote flex flex-row items-center gap-2 select-none">
 				<Head />
 				<span className="sidenote-number-internal self-start">{index}</span>
-				<div>{children}</div>
+				<span>{children}</span>
 			</motion.div>
 		</>
 		// </div>

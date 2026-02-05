@@ -82,34 +82,30 @@ export default function Sidenote({ children, index, head }: Props) {
 	// if (type === 'marginnote') {
 	if (!index) {
 		return (
-			// <div className="not-prose">
 			<>
 				<label htmlFor={id} className="margin-toggle">
 					{/* &#8853; */}
 					&#8226;
 				</label>
 				<input type="checkbox" id={id} className="margin-toggle" />
-				<motion.div className="marginnote flex flex-row items-center gap-2 select-none" {...motionProps}>
+				<motion.div className="marginnote flex flex-row items-center gap-2 select-none mb-2" {...motionProps}>
 					<Head />
-					<span>{children}</span>
+					<span className="overflow-x-auto text-ellipsis max-lg:text-base max-md:text-sm">{children}</span>
 				</motion.div>
 			</>
-			// </div>
 		)
 	}
 
 	return (
-		// <div className="not-prose">
 		<>
 			<input type="checkbox" id={id} className="margin-toggle" />
 			<label htmlFor={id} className="margin-toggle sidenote-number"></label>
-			<motion.div {...motionProps} className="sidenote flex flex-row items-center gap-2 select-none">
+			<motion.div {...motionProps} className="sidenote flex flex-row items-center gap-2 select-none mb-2">
 				<Head />
 				<span className="sidenote-number-internal self-start">{index}</span>
 				<span className="overflow-x-auto text-ellipsis max-lg:text-base max-md:text-sm">{children}</span>
 			</motion.div>
 		</>
-		// </div>
 	)
 }
 

@@ -1,6 +1,6 @@
 import {
 	// Anton,
-	// Bonheur_Royale,
+	Bonheur_Royale,
 	// Covered_By_Your_Grace,
 	EB_Garamond,
 	// Economica,
@@ -119,12 +119,12 @@ const lexend = Lexend({
 // 	display: 'swap',
 // 	variable: '--font-unifraktur',
 // })
-// const royale = Bonheur_Royale({
-// 	weight: '400',
-// 	subsets: ['latin'],
-// 	display: 'swap',
-// 	variable: '--font-royale',
-// })
+const royale = Bonheur_Royale({
+	weight: '400',
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-royale',
+})
 // const sassy = Sassy_Frass({
 // 	weight: '400',
 // 	subsets: ['latin'],
@@ -180,5 +180,5 @@ const scrubs = localFont({
 	],
 })
 
-export const fontClasses = `${elsie.variable} ${lexend.variable} ${etBook.variable} ${nabla.variable} ${garamond.variable} ${scrubs.variable}`
+export const fontClasses = `${elsie.variable} ${lexend.variable} ${etBook.variable} ${nabla.variable} ${garamond.variable} ${scrubs.variable} ${royale.variable}`
 // export const fontClasses = `${anton.variable} ${covered_by_your_grace.variable} ${economica.variable} ${elsie.variable} ${gothic.variable} ${im_fell.variable} ${italiana.variable} ${league.variable} ${montez.variable} ${mrs_saint.variable} ${permanent.variable} ${playfair.variable} ${unifraktur.variable} ${etBook.variable} ${nabla.variable} ${lexend.variable} ${garamond.variable} ${royale.variable} ${sassy.variable}`

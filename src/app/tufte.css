@@ -35,7 +35,7 @@
 	section > div.p,
 	section > p,
 	section > footer,
-	section > div,
+	section:not(.embla) > div,
 	section > table {
 		@apply w-[65%] my-4;
 	}
@@ -195,6 +195,15 @@
 		main {
 			@apply w-full px-[2%];
 		}
+
+		/* hr,
+		section > p,
+		section > div.p,
+		section > div,
+		section > footer,
+		section > table {
+			@apply w-full;
+		} */
 	}
 	@media (max-width: 760px) {
 		/* @media (max-width: 40rem) { */

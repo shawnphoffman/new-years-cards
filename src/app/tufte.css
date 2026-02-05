@@ -77,7 +77,7 @@
 	}
 	.sidenote,
 	.marginnote {
-		@apply z-50 border border-(--themebackground2) flex float-right clear-right mr-[-60%] max-w-[45%] w-fit text-lg leading-tight align-baseline relative mt-1 mb-0 px-4 py-2 ps-2 rounded bg-white/40 dark:bg-white/20 p-1 shadow-lg backdrop-blur-lg text-pretty md:relative md:right-8 md:mt-0.5;
+		@apply z-50 border border-(--themebackground2) flex float-right clear-right mr-[-60%] max-w-[45%] w-fit text-lg leading-tight align-baseline relative mt-1 mb-0 px-4 py-2 ps-2 rounded bg-white/40 dark:bg-neutral-600/50 backdrop-blur-lg p-1 shadow-lg text-pretty md:relative md:right-8 md:mt-0.5;
 	}
 
 	.fullwidth {

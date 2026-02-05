@@ -104,8 +104,10 @@ body {
 	--sidebar-ring: oklch(0.708 0 0);
 
 	--themebackground: oklch(75.81% 0.0524 143.52);
-	--themebackground2: oklch(93.67% 0.0738 221.75);
-	--themeforeground: oklch(32.39% 0.0449 77.93);
+	/* --themebackground2: oklch(93.67% 0.0738 221.75); */
+	--themebackground2: var(--color-teal-200);
+	--themeforeground: var(--color-teal-950);
+	/* --themeforeground: oklch(32.39% 0.0449 77.93); */
 	--themeaccent: oklch(47.39% 0.0449 77.93);
 }
 
@@ -143,7 +145,7 @@ body {
 	--sidebar-ring: oklch(0.556 0 0);
 
 	--themebackground: var(--color-neutral-600);
-	--themebackground2: var(--color-neutral-900);
+	--themebackground2: var(--color-sky-950);
 	--themeforeground: var(--color-neutral-200);
 	--themeaccent: var(--color-teal-500);
 }
@@ -196,10 +198,10 @@ body {
 
 /* DEBUT */
 h1 {
-	@apply text-5xl sm:text-7xl font-(family-name:--font-elsie);
+	@apply text-5xl sm:text-7xl font-(family-name:--font-scrubs);
 }
 h2 {
-	@apply text-4xl sm:text-5xl font-(family-name:--font-elsie);
+	@apply text-4xl sm:text-5xl font-(family-name:--font-scrubs) -rotate-6 origin-bottom-left;
 }
 h3 {
 	@apply font-(family-name:--font-elsie);

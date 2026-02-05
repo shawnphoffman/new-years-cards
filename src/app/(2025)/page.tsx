@@ -5,8 +5,8 @@ import Comments from '@/components/Comments'
 import Signature from '@/components/signature'
 
 export const metadata: Metadata = {
-	title: '2025 In Review',
-	description: "A digital version of Madison's 2025 annual letter",
+	title: '2025 In Review - MadiShawn Letter',
+	description: "A digital version of Madison & Shawn's 2025 annual letter. Written by Madison. Annotated by Shawn.",
 }
 
 // const url = 'at://madisonmsites.com/app.bsky.feed.post/3lkhoze4ngs2g'

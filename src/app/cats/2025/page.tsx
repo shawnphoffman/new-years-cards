@@ -4,8 +4,8 @@ import { SidenoteProvider } from '@/components/Sidenote'
 import Signature from '@/components/signature'
 
 export const metadata: Metadata = {
-	title: '2025 Cats Review',
-	// description: "A digital version of Madison's 2024 cats annual letter",
+	title: '2025 In Review - MadiShawn Cat Letter',
+	description: "A digital version of Madison & Shawn's 2025 annual cat letter. Written by Madison. Annotated by Shawn.",
 }
 
 export default function CatsTwentyFive() {

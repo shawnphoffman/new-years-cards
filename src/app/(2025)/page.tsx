@@ -18,7 +18,7 @@ const postUrl = process.env.COMMENTS_POSTURL_2025
 export default function TwentyFive() {
 	return (
 		<>
-			<article className="flex flex-col gap-10 sm:gap-12 lg:gap-20 xl:gap-24 pt-28">
+			<article className="flex flex-col gap-10 sm:gap-12 lg:gap-20 xl:gap-24 pt-18">
 				<h1 className="text-4xl font-bold">2025 In Review</h1>
 				<div className="mx-auto w-full">
 					<section>

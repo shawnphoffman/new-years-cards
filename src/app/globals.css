@@ -103,12 +103,10 @@ body {
 	--sidebar-border: oklch(0.922 0 0);
 	--sidebar-ring: oklch(0.708 0 0);
 
-	--themebackground: oklch(75.81% 0.0524 143.52);
-	/* --themebackground2: oklch(93.67% 0.0738 221.75); */
-	--themebackground2: var(--color-teal-200);
+	--themebackground: var(--color-teal-300);
+	--themebackground2: var(--color-teal-100);
 	--themeforeground: var(--color-teal-950);
-	/* --themeforeground: oklch(32.39% 0.0449 77.93); */
-	--themeaccent: oklch(47.39% 0.0449 77.93);
+	--themeaccent: var(--color-teal-800);
 }
 
 .dark {
@@ -144,7 +142,7 @@ body {
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
 
-	--themebackground: var(--color-neutral-600);
+	--themebackground: var(--color-teal-800);
 	--themebackground2: var(--color-sky-950);
 	--themeforeground: var(--color-neutral-200);
 	--themeaccent: var(--color-teal-500);

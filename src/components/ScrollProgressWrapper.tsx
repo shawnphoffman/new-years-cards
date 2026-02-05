@@ -9,7 +9,7 @@ export function ScrollProgressWrapper({ children }: Props) {
 
 	return (
 		<div className="max-h-screen overflow-y-auto overflow-x-hidden pb-8 pt-8" ref={containerRef}>
-			<div className="pointer-events-none absolute left-0 top-0 h-24 w-full bg-white to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] dark:bg-black z-40" />
+			<div className="pointer-events-none absolute left-0 top-0 h-16 w-full bg-teal-900 to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] dark:bg-black z-40" />
 			{/* <div className="pointer-events-none absolute left-0 top-0 h-24 w-full bg-white to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] dark:bg-(--themebackground2) z-40" /> */}
 			<div className="pointer-events-none absolute left-0 top-0 w-full">
 				<div className="absolute left-0 top-0 h-0.5 w-full dark:bg-[#111111]" />

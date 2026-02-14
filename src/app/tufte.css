@@ -254,7 +254,7 @@
 
 		.sidenote,
 		.marginnote {
-			@apply flex float-left clear-both w-[95%] align-baseline relative my-2 mx-0 left-2 px-4 ps-2 py-2 rounded bg-white/60 dark:bg-white/20 p-1 shadow-lg backdrop-blur-lg indent-0 max-w-none;
+			@apply flex float-left clear-both w-[95%] align-baseline relative my-2 mx-0 left-2 px-4 ps-2 py-2 rounded bg-white/60 dark:bg-white/20 p-1 shadow-[3px_3px_0_var(--themeaccent)] backdrop-blur-lg indent-0 max-w-none;
 		}
 
 		.fullwidth {

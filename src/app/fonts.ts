@@ -173,7 +173,8 @@ const scrubs = localFont({
 	display: 'swap',
 	src: [
 		{
-			path: '../fonts/scrubs.ttf',
+			// path: '../fonts/scrubs.ttf',
+			path: '../fonts/TSSScrubsLogo-Regular.otf',
 			weight: '400',
 			style: 'normal',
 		},

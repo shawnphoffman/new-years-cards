@@ -87,18 +87,21 @@
 		}
 	}
 
-	.sidenote-number {
+	/* .sidenote-number {
 		counter-increment: sidenote-counter;
-	}
+	} */
 
-	.sidenote-number:after,
+	.sidenote-number,
+	/* .sidenote-number:after, */
 	.sidenote-number-internal,
 	.sidenote:before {
 		@apply relative align-baseline;
 	}
 
-	.sidenote-number:after {
-		@apply content-[counter(sidenote-counter)] text-lg -top-2 left-[0.1rem];
+	/* .sidenote-number:after { */
+	.sidenote-number {
+		/* @apply content-[counter(sidenote-counter)] text-lg -top-2 left-[0.1rem]; */
+		@apply text-lg -top-2 left-[0.1rem];
 	}
 
 	.sidenote-number-internal {
@@ -205,7 +208,6 @@
 		} */
 	}
 	@media (max-width: 760px) {
-		/* @media (max-width: 40rem) { */
 		main {
 			@apply px-[4%];
 		}
@@ -214,6 +216,7 @@
 		section > p,
 		section > div.p,
 		section > div,
+		section:not(.embla) > div,
 		section > footer,
 		section > table {
 			@apply w-full;

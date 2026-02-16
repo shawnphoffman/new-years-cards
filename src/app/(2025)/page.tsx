@@ -25,9 +25,9 @@ export default function TwentyFive() {
 						<SidenoteProvider>
 							<Card />
 							<Signature />
-							<div className="clear-both fullwidth">
+							<div className="clear-both fullwidth pt-4">
 								<h3>Additional Notes</h3>
-								<p>Herpa derp derp</p>
+								<p>All four of the letter printouts.</p>
 							</div>
 							<section className="fullwidth  flex flex-col">
 								<Sidenote head="cox">

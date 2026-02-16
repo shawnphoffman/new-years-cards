@@ -131,7 +131,9 @@ export default function Sidenote({ children, index, head }: Props) {
 	return (
 		<>
 			<input type="checkbox" id={id} className="margin-toggle" />
-			<label htmlFor={id} className="margin-toggle sidenote-number"></label>
+			<label htmlFor={id} className="margin-toggle sidenote-number" suppressHydrationWarning>
+				{index}
+			</label>
 			<motion.div {...motionProps} className="sidenote flex flex-row items-center gap-2 select-none mb-2">
 				<Head />
 				<span className="sidenote-number-internal self-start" suppressHydrationWarning>

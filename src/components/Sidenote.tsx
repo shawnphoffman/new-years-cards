@@ -20,7 +20,7 @@ import Madi5 from '@/components/img/madi_5.png'
 import Cox from '@/components/img/cox.png'
 import Jd from '@/components/img/jd.png'
 import Elliot from '@/components/img/elliot.png'
-import Janitor from '@/components/img/janitor.png'
+// import Janitor from '@/components/img/janitor.png'
 
 const motionProps: MotionProps = {
 	// initial: { opacity: 0, scale: 0 },
@@ -35,7 +35,7 @@ const motionProps: MotionProps = {
 
 type Props = {
 	index?: number
-	head?: 'shawn' | 'bluebell' | 'scoop' | 'madi' | 'cox' | 'jd' | 'elliot' | 'janitor'
+	head?: 'shawn' | 'bluebell' | 'scoop' | 'madi' | 'cox' | 'jd' | 'elliot' // | 'janitor'
 	children: React.ReactNode
 }
 
@@ -82,7 +82,7 @@ export const Madi5Head = () => <Image src={Madi5} height={36} alt="Madison" titl
 export const CoxHead = () => <Image src={Cox} height={72} alt="Cox" title="Notes from Cox" className="shawn-head" />
 export const JdHead = () => <Image src={Jd} height={72} alt="JD" title="Notes from JD" className="shawn-head" />
 export const ElliotHead = () => <Image src={Elliot} height={72} alt="Elliot" title="Notes from Elliot" className="shawn-head" />
-export const JanitorHead = () => <Image src={Janitor} height={72} alt="Janitor" title="Notes from Janitor" className="shawn-head" />
+// export const JanitorHead = () => <Image src={Janitor} height={72} alt="Janitor" title="Notes from Janitor" className="shawn-head" />
 
 const SHAWN_HEADS = [ShawnHead, Shawn2Head, Shawn3Head, Shawn4Head, Shawn5Head, Shawn6Head, Shawn7Head]
 const MADI_HEADS = [Madi2Head, Madi3Head, Madi4Head, Madi5Head]
@@ -103,8 +103,8 @@ export default function Sidenote({ children, index, head }: Props) {
 		Head = JdHead
 	} else if (head === 'elliot') {
 		Head = ElliotHead
-	} else if (head === 'janitor') {
-		Head = JanitorHead
+		// } else if (head === 'janitor') {
+		// 	Head = JanitorHead
 	} else if (head === 'madi') {
 		Head = MADI_HEADS[madiHeadIndex]
 	} else {

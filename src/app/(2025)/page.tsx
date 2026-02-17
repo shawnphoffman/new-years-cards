@@ -48,11 +48,11 @@ export default function TwentyFive() {
 									years, which is adorable and frankly suspicious. And yes, the cats have their own card again. Yes, they “signed” it. Shawn
 									assisted.
 								</Sidenote>
-								<Sidenote head="janitor">
+								{/* <Sidenote head="janitor">
 									You’ve been issued one (1) insert. Read it. No printed letter because surgery recovery. QR contains the full digital
 									letter. Don’t make me say it twice. Shawn lettered the envelopes and helped the cats sign their own card, which is… a
 									choice. Also: ten years together. Huh. Scan the QR. And wash your hands.
-								</Sidenote>
+								</Sidenote> */}
 							</section>
 						</SidenoteProvider>
 					</section>

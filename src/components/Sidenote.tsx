@@ -115,7 +115,7 @@ export default function Sidenote({ children, index, head }: Props) {
 	if (!index) {
 		return (
 			<>
-				<label htmlFor={id} className="margin-toggle">
+				<label htmlFor={id} className="margin-toggle" suppressHydrationWarning>
 					{/* &#8853; */}
 					&#8226;
 				</label>
